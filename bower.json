@@ -1,0 +1,21 @@
+{
+  "name": "slugifier",
+  "version": "0.0.0",
+  "authors": [
+    "Fabian Vallejos <vallejosfab@gmail.com>"
+  ],
+  "description": "Simple implementation to create slugs",
+  "main": "dist/slugifier.js",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "slugifier",
+    "angular",
+    "angularjs",
+    "slug",
+    "ng",
+    "es6"
+  ],
+  "license": "MIT"
+}
