@@ -1,4 +1,4 @@
-# slugifier
+# slugifier (work in progress...)
 ===========
 
 [![Build Status](https://travis-ci.org/vallejosfab/slugifier.svg?branch=master)](https://travis-ci.org/vallejosfab/slugifier)
@@ -17,6 +17,16 @@ bower install --save slugifier
 ```
 
 
+## Requirements
 
+1. Gulp
+```sh
+npm install -g gulp
+```
+
+2. Karma
+```sh
+npm install -g karma
+```
 
 

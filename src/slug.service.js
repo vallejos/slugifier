@@ -3,9 +3,8 @@
  */
 (function() {
 
-    angular.module('fv.Slugify', [])
+    angular.module('Slugify', [])
         .factory('slugify', slugService);
-
 
     /*
      * @ngdoc factory
@@ -18,11 +17,11 @@
      * @returns {String}
      *
      */
-    function slugify() {
+    function slugService() {
 
         const UNWANTED_CHARS = '/([^a-z0-9]|-)+/';
 
-        return function slugify(text, separator) {
+        return function (text, separator) {
             separator = !!separator ? separator : '-';
 
             return text.toLowerCase()

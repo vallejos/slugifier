@@ -53,25 +53,6 @@ gulp.task('test:minified', ['dist'], function(done) {
 
 
 
-/**
- *
- * Run jscs (Javascript Code Style checker)
- * over all the js files.
- *
- * Checkout .jscsrc for config parameters
- *
- */
-gulp.task('jscs', function() {
-    return gulp.src([
-        DIR.src,
-        DIR.test,
-        DIR.gulp,
-        DIR.karma.plain,
-        DIR.karma.minified
-    ])
-        .pipe($.jscs());
-});
-
 
 /*
  *
@@ -81,8 +62,7 @@ gulp.task('jscs', function() {
  */
 gulp.task('continuous', [
     'test:plain',
-    'test:minified',
-    'jscs'
+    'test:minified'
 ]);
 
 

@@ -7,14 +7,14 @@
 
     /*
      * @ngdoc module
-     * @name Slugifier
+     * @name fvSlugifier
      *
      * @description
      * Simple slug creator
      *
      */
-    angular.module('Slugifier', [
-        'fv.Slugify'
+    angular.module('fvSlugifier', [
+        'Slugify'
     ]);
 
 }) ();
