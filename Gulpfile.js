@@ -17,11 +17,15 @@ var DIR = {
         plain: 'karma.conf.plain.js',
         minified: 'karma.conf.minified.js'
     },
-    gulp: 'Gulpfile.js',
+    gulp: 'gulpfile.js',
 
     dist: 'dist/'
 };
 
+/**
+ * Add basic help task
+ */
+//gulp.task('help', plug.taskListing);
 
 
 
@@ -84,6 +88,14 @@ gulp.task('dist', ['clean:dist'], function() {
 });
 
 
+/**
+ * Run specs once and exit
+ * To start servers and run midway specs as well:
+ *    gulp test --startServers
+ */
+gulp.task('test', function (done) {
+    testCore(true /*singleRun*/, done);
+});
 
 
 /*
@@ -95,3 +107,44 @@ gulp.task('clean:dist', function(cb) {
 
 
 gulp.task('default', []);
+
+
+///////////////
+
+function testCore(singleRun, done) {
+    var child;
+    var excludeFiles = ['./src/client/app/**/*spaghetti.js'];
+    var spawn = require('child_process').spawn;
+
+    if (env.startServers) {
+        log('Starting servers');
+        var savedEnv = process.env;
+        savedEnv.NODE_ENV = 'dev';
+        savedEnv.PORT = 8888;
+        child = spawn('node', ['src/server/app.js'], {env: savedEnv}, childCompleted);
+    } else {
+        excludeFiles.push('./src/client/test/midway/**/*.spec.js');
+    }
+
+    startTests();
+
+    ////////////////////
+    function childCompleted(error, stdout, stderr) {
+        log('stdout: ' + stdout);
+        log('stderr: ' + stderr);
+        if (error !== null) {
+            log('exec error: ' + error);
+        }
+    }
+
+    function startTests() {
+        karma.start({
+            configFile: __dirname + '/karma.conf.js',
+            exclude: excludeFiles,
+            singleRun: !!singleRun
+        }, function() {
+            if (child) {child.kill();}
+            done();
+        });
+    }
+}

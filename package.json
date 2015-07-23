@@ -1,10 +1,17 @@
 {
   "name": "slugifier",
-  "version": "0.0.1",
-  "scripts": {
-    "test": "node_modules/.bin/gulp continuous"
-  },
+  "version": "0.0.0",
+  "description": "Simple Slugifier for Angular",
+  "authors": [
+    "Fabian Vallejos"
+  ],
   "license": "MIT",
+  "scripts": {
+    "init": "npm install",
+    "install": "bower install; gulp clean",
+    "start": "gulp clean; gulp serve-dev",
+    "test": "gulp test"
+  },
   "devDependencies": {
     "del": "^1.0.0",
     "gulp": "^3.8.10",
@@ -21,3 +28,4 @@
     "karma-phantomjs-launcher": "^0.1.4"
   }
 }
+
