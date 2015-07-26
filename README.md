@@ -1,9 +1,9 @@
 # slugifier (work in progress...)
 ===========
 
-[![Build Status](https://travis-ci.org/vallejosfab/slugifier.svg?branch=master)](https://travis-ci.org/vallejosfab/slugifier)
+[![Build Status](https://travis-ci.org/vallejos/slugifier.svg?branch=master)](https://travis-ci.org/vallejos/slugifier)
 [![Bower version](https://badge.fury.io/bo/slugifier.svg)](http://badge.fury.io/bo/slugifier)
-[![Coverage Status](https://img.shields.io/coveralls/vallejosfab/slugifier.svg)](https://coveralls.io/r/vallejosfab/slugifier)
+[![Coverage Status](https://img.shields.io/coveralls/vallejos/slugifier.svg)](https://coveralls.io/r/vallejos/slugifier)
 
 Simple slugifier for AngularJS.
 
